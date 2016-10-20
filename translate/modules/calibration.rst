@@ -1,26 +1,19 @@
 .. _calibration:
 
 =======================
-Probability calibration
+概率校准
 =======================
 
 .. currentmodule:: sklearn.calibration
 
 
-When performing classification you often want not only to predict the class
-label, but also obtain a probability of the respective label. This probability
-gives you some kind of confidence on the prediction. Some models can give you
-poor estimates of the class probabilities and some even do not support
-probability prediction. The calibration module allows you to better calibrate
-the probabilities of a given model, or to add support for probability
-prediction.
+当执行分类你通常希望不仅预测类标签,
+而且想获得相应的标签的概率。这个概率给你预测某种信心. 一些模型类的概率可以给你差估计,
+有的甚至不支持概率预测。校准模块,可以让你更好的校准给定的概率模型,或添加支持概率预测。
 
-Well calibrated classifiers are probabilistic classifiers for which the output
-of the predict_proba method can be directly interpreted as a confidence level.
-For instance, a well calibrated (binary) classifier should classify the samples
-such that among the samples to which it gave a predict_proba value close to 0.8,
-approximately 80% actually belong to the positive class. The following plot compares
-how well the probabilistic predictions of different classifiers are calibrated:
+校准分类器是概率分类器的输出的predict_proba方法可以直接理解为一个置信水平。
+例如,井校准(二进制)分类器分类样本之间的样本,这样它给predict_proba值接近0.8,
+大约80%实际上属于积极的类。下面的情节比较不同分类器的概率预测是如何校准:
 
 .. figure:: ../auto_examples/calibration/images/plot_compare_calibration_001.png
    :target: ../auto_examples/calibration/plot_compare_calibration.html
@@ -28,9 +21,9 @@ how well the probabilistic predictions of different classifiers are calibrated:
 
 .. currentmodule:: sklearn.linear_model
 
-:class:`LogisticRegression` returns well calibrated predictions by default as it directly
-optimizes log-loss. In contrast, the other methods return biased probabilities;
-with different biases per method:
+:class:`LogisticRegression` 默认返回校准的预测,因为它直接优化log-loss。相比之下,
+其他方法返回带有偏差的概率;
+每个方法有不同的偏差:
 
 .. currentmodule:: sklearn.naive_bayes
 
